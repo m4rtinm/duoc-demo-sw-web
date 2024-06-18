@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicación IoT</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.0.2"></script>
+</head>
+<body>
+    <header>
+        <h1>Aplicación IoT</h1>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="quadrants">
+                <section id="live-data" class="quadrant">
+                    <h2>Dato en Vivo</h2>
+                    <div id="live-value">0</div>
+                    <div id="live-date" class="live-date">Fecha y Hora: --</div>
+                    <button id="settings-button">Cambiar Configuración</button>
+                </section>
+                
+                <section id="device-info" class="quadrant">
+                    <h2>Información del Dispositivo</h2>
+                    <div class="info-item">ID del Dispositivo: <span id="device-id">12345</span></div>
+                    <div class="info-item">Umbral de Alerta: <span id="alert-threshold">50</span></div>
+                    <div class="info-item">Intervalo de Tiempo: <span id="time-interval">10s</span></div>
+                    <div class="info-item">Alerta Activa: <span id="alert-active">No</span></div>
+                    <div class="info-item">Fecha y Hora: <span id="date">2023-10-01T10:00:00Z</span></div>
+                </section>
+            </div>
+            
+            <section id="history-chart">
+                <h2>Historial</h2>
+                <canvas id="chart" width="300" height="150"></canvas>
+            </section>
+        </div>
+    </main>
+    
+    <!-- Modal -->
+    <div id="settings-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Configuración</h2>
+            <form id="settings">
+                <label for="new-threshold">Nuevo Umbral de Alerta:</label>
+                <input type="number" id="new-threshold" name="new-threshold">
+                
+                <label for="new-interval">Nuevo Intervalo de Tiempo (s):</label>
+                <input type="number" id="new-interval" name="new-interval">
+                
+                <button type="submit">Enviar</button>
+            </form>
+            <div id="spinner" class="spinner" style="display: none;"></div> <!-- Spinner añadido -->
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
