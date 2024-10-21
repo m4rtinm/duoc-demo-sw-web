@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Llamar a la función fetchData con el device_id deseado
-    const deviceId = 'rak5860_test_1'; // Reemplaza con el ID del dispositivo que deseas consultar
+    const deviceId = 'test_iot'; // Reemplaza con el ID del dispositivo que deseas consultar
     fetchData(deviceId);
 
     // Revisar cada 30 segundos si existe un dato nuevo en la API
