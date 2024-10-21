@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const apiUrl = 'https://g2d2rsxvsh.execute-api.us-east-2.amazonaws.com/devices'; // URL de tu API para obtener datos
-    const updateUrl = 'https://tipsqcwdq25b6qsvfbeecp547m0rgpsp.lambda-url.us-west-2.on.aws/'; // URL de tu API para enviar datos
+    // URL de tu API para obtener datos
+    const apiUrl = 'https://g2d2rsxvsh.execute-api.us-east-2.amazonaws.com/devices'; 
+    const updateUrl = 'https://tipsqcwdq25b6qsvfbeecp547m0rgpsp.lambda-url.us-west-2.on.aws/'; // URL de tu API para enviar datos (no especificaste otra, así que dejé esta)
 
     // Crear un sonido de alerta con Howler.js
     const alertSound = new Howl({
@@ -192,12 +193,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Llamar a la función fetchData con el device_id deseado
-    const deviceId = 'test_iot'; // Reemplaza con el ID del dispositivo que deseas consultar
+    // Llamar a la función fetchData con el ID del dispositivo deseado
+    const deviceId = 'test_iot'; // ID del dispositivo que deseas consultar
     fetchData(deviceId);
 
     // Revisar cada 30 segundos si existe un dato nuevo en la API
     setInterval(() => {
         fetchData(deviceId);
-    }, 10000); // 30000 ms = 30 segundos
+    }, 30000); // 30000 ms = 30 segundos
 });
