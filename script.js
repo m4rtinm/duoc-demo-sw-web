@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const apiUrl = 'https://2npmpedtyzy5bl2cnfy6xckqcy0zbvzq.lambda-url.us-west-2.on.aws/'; // URL de tu API para obtener datos
+    const apiUrl = 'https://g2d2rsxvsh.execute-api.us-east-2.amazonaws.com/devices'; // URL de tu API para obtener datos
     const updateUrl = 'https://tipsqcwdq25b6qsvfbeecp547m0rgpsp.lambda-url.us-west-2.on.aws/'; // URL de tu API para enviar datos
 
     // Crear un sonido de alerta con Howler.js
